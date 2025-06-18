@@ -1,0 +1,39 @@
+# RUST PART
+debug/
+target/
+Cargo.lock
+**/*.rs.bk
+*.pdb
+
+# NEXT PART
+node_modules/
+.pnp/
+.pnp.js
+coverage/
+.next/
+out/
+build/
+.DS_Store
+*.pem
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.env*.local
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+
+# GO PART
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+vendor/
+go.work
+
+# MAIN
+.idea/
