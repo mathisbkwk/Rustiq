@@ -1,9 +1,10 @@
-# RUST PART
-debug/
-target/
-Cargo.lock
-**/*.rs.bk
-*.pdb
+# CPP PART
+
+cmake-build-debug
+*.o
+*.out
+*.a
+rustiq_ai
 
 # NEXT PART
 node_modules/
