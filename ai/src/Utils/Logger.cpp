@@ -6,3 +6,5 @@
 */
 
 #include "Logger.hpp"
+
+rustiq::Logger::Logger(const bool& isDebugActivate): _isDebuggingMode(isDebugActivate) {}
