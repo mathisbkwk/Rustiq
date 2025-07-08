@@ -6,3 +6,10 @@
 */
 
 #include "DataLoader.hpp"
+
+
+rustiq::DataLoader::DataLoader(std::string fileName)
+{
+    (void)fileName;
+}
+
