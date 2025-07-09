@@ -7,18 +7,20 @@
 
 #ifndef CSVPARSER_HPP
 #define CSVPARSER_HPP
-#include "Parser.hpp"
 
+#include "../Factory/ParserFactory.hpp"
 
 namespace rustiq {
     class CSVParser : public IParser {
         public:
             struct CSVOptions {
                 std::vector<char> separators = {',', ';'};
-                bool has_header = false;
+                bool has_header = true;
             };
-            bool hasHeader(const std::vector<std::string>& chunks) const;
-            std::vector<std::string> parse(const std::string& filepath) override;
+
+                std::vector<ChunkObject> parse(const std::string& filepath) override;
+        private:
+            CSVOptions _options;
     };
 }
 

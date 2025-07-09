@@ -9,7 +9,7 @@
 #define UTILS_HPP
 
 #include <string>
-#include "../DataLoader.hpp"
+#include "rustiq.hpp"
 
 namespace rustiq {
     class ParserUtils {

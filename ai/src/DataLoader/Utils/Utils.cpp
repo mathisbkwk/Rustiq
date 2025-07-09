@@ -9,7 +9,6 @@
 #include <algorithm>
 #include <filesystem>
 #include <unordered_map>
-#include "../DataLoader.hpp"
 
 rustiq::FileExtension rustiq::ParserUtils::detectExtension(const std::string& path)
 {
@@ -25,8 +24,6 @@ rustiq::FileExtension rustiq::ParserUtils::detectExtension(const std::string& pa
         {".tsv",   TSV},
         {".txt",   TXT},
         {".xlsx",  XLSX},
-        {".zip",   ZIP},
-        {".gz",    GZ},
     };
 
     std::string ext = std::filesystem::path(path).extension().string();

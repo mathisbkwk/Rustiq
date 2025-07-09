@@ -1,8 +1,14 @@
 
+#include "DataLoader/DataLoader.hpp"
 #include <iostream>
 
-int main(void)
+int main(int ac, char **av)
 {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    if (ac < 0 || !av || !av[1]) {
+        std::cerr << "Invalid Arguments." << std::endl;
+        return 84;
+    }
+    rustiq::DataLoader dataLoader(av[1]);
+    
+    dataLoader.printChunks();
 }

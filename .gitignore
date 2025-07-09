@@ -5,6 +5,7 @@ cmake-build-debug
 *.out
 *.a
 rustiq_ai
+.cache/
 
 # NEXT PART
 node_modules/

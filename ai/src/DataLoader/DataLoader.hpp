@@ -8,28 +8,27 @@
 #ifndef DATALOADER_HPP
 #define DATALOADER_HPP
 
+#include <exception>
 #include <string>
+#include <vector>
+#include "Factory/ParserFactory.hpp"
 
 namespace rustiq 
 {
-
-    enum FileExtension {
-        JSON,
-        JSONL,
-        YAML,
-        TOML,
-        XML,
-        CSV,
-        TSV,
-        TXT,
-        XLSX,
-        UNKNOWN,
-    };
-
     class DataLoader {
         public:
+            class DataLoaderError : public std::exception {
+                private:
+                    std::string _message;
+                public:
+                    DataLoaderError(const std::string& msg): _message(msg) {};
+                    const char *what() const noexcept override { return _message.c_str(); }
+            };
             explicit DataLoader(std::string fileName);
-            ~DataLoader() = delete;
+            ~DataLoader();
+            
+            void printChunks();
+            std::vector<ChunkObject> _chunks;
     };
 }
 

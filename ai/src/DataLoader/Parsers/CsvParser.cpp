@@ -6,17 +6,17 @@
 */
 
 #include "CsvParser.hpp"
+#include <filesystem>
 
-bool rustiq::CSVParser::hasHeader(const std::vector<std::string>& chunks) const
+std::vector<rustiq::ChunkObject> rustiq::CSVParser::parse(const std::string& filepath)
 {
-    if (chunks.empty())
-        return false;
-    for (auto& chunk : chunks) {
+    std::filesystem::path path(filepath);
+    std::istringstream stream(filepath);
+    std::string line;
+    std::vector<ChunkObject> chunks;
 
+    while (std::getline(stream, line)) {
+        chunks.push_back({line, line, 1, 1});
     }
-}
-
-std::vector<std::string> rustiq::CSVParser::parse(const std::string& filepath)
-{
-
+    return chunks;
 }
