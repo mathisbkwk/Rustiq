@@ -15,13 +15,11 @@ rustiq::FileExtension rustiq::ParserUtils::detectExtension(const std::string& pa
     static std::unordered_map<std::string, FileExtension> extMap = {
         {".json",  JSON},
         {".jsonl", JSONL},
-        {".ndjson", JSONL},
         {".yaml",  YAML},
         {".yml",   YAML},
         {".toml",  TOML},
         {".xml",   XML},
         {".csv",   CSV},
-        {".tsv",   TSV},
         {".txt",   TXT},
         {".xlsx",  XLSX},
     };
