@@ -1,22 +1,31 @@
-/*
-** EPITECH PROJECT, 2025
-** rustiq_ai
-** File description:
-** 07
-*/
-
 #include "CsvParser.hpp"
-#include <filesystem>
+#include <fstream>
+#include <stdexcept>
 
-std::vector<rustiq::ChunkObject> rustiq::CSVParser::parse(const std::string& filepath)
-{
-    std::filesystem::path path(filepath);
-    std::istringstream stream(filepath);
-    std::string line;
-    std::vector<ChunkObject> chunks;
+namespace rustiq {
 
-    while (std::getline(stream, line)) {
-        chunks.push_back({line, line, 1, 1});
-    }
-    return chunks;
+    CSVParser::CSVOptions default_options;
+
+    std::vector<ChunkObject> CSVParser::parse(const std::string& filepath) {
+            std::ifstream file(filepath);
+            if (!file.is_open()) {
+                throw std::runtime_error("Could not open file: " + filepath);
+            }
+    
+            std::vector<ChunkObject> chunks;
+            std::string line;
+            std::size_t index = 0;
+            bool skip_header = _options.has_header;
+    
+            while (std::getline(file, line)) {
+                if (skip_header) {
+                    skip_header = false;
+                    continue;
+                }
+    
+                chunks.emplace_back("csv_row", line, line.length(), index++);
+            }
+    
+            return chunks;
+        }
 }
