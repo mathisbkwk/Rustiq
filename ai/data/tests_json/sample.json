@@ -1,0 +1,19 @@
+{
+  "users" : [
+    {
+      "name": "Allo",
+      "age": 12,
+      "active": true
+    },
+    {
+      "name": "Coucou",
+      "age": 12,
+      "active": true
+    },
+    {
+      "name": "Salut",
+      "age": 12,
+      "active": true
+    }
+  ]
+}
