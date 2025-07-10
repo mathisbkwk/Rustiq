@@ -9,10 +9,14 @@
 #define JSONPARSER_HPP
 
 
+#include "../Factory/ParserFactory.hpp"
 
-class JsonParser {
-
-};
+namespace rustiq {
+    class JsonParser : public IParser {
+        public:
+            std::vector<ChunkObject> parse(const std::string& filepath) override;
+    };
+}
 
 
 

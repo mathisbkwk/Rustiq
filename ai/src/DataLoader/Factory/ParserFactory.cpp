@@ -7,11 +7,16 @@
 
 #include "ParserFactory.hpp"
 #include "DataLoader/Parsers/CsvParser.hpp"
+#include "DataLoader/Parsers/JsonLParser.hpp"
+#include "DataLoader/Parsers/JsonParser.hpp"
+#include "DataLoader/Utils/Utils.hpp"
 
 rustiq::ParserFactory::ParserFactory()
 {
     _parsers = {
         {rustiq::FileExtension::CSV, [](){ return std::make_shared<CSVParser>(); }},
+        {rustiq::FileExtension::JSONL, []() { return std::make_shared<JsonLParser>(); }},
+        {rustiq::FileExtension::JSON, []() { return std::make_shared<JsonParser>(); }},
     };
 }
 

@@ -7,13 +7,14 @@
 
 #ifndef JSONLPARSER_HPP
 #define JSONLPARSER_HPP
+#include "../Factory/ParserFactory.hpp"
 
-
-
-class JsonLParser {
-
-};
-
+namespace rustiq {
+    class JsonLParser : public IParser {
+        public:
+            std::vector<ChunkObject> parse(const std::string& filepath) override;
+    };
+}
 
 
 #endif //JSONLPARSER_HPP
