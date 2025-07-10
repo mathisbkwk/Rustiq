@@ -18,7 +18,7 @@ namespace rustiq {
                 bool has_header = true;
             };
 
-                std::vector<ChunkObject> parse(const std::string& filepath) override;
+            std::vector<ChunkObject> parse(const std::string& filepath) override;
         private:
             CSVOptions _options;
     };
