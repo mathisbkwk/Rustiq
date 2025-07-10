@@ -8,9 +8,7 @@ namespace rustiq {
         TOML,
         XML,
         CSV,
-        TSV,
         TXT,
-        XLSX,
         UNKNOWN,
     };
 }

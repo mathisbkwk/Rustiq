@@ -1,19 +1,13 @@
-/*
-** EPITECH PROJECT, 2025
-** rustiq_ai
-** File description:
-** 07
-*/
-
 #ifndef XMLPARSER_HPP
 #define XMLPARSER_HPP
 
+#include "../Factory/ParserFactory.hpp"
 
+namespace rustiq {
+    class XmlParser : public IParser {
+    public:
+        std::vector<ChunkObject> parse(const std::string& filePath) override;
+    };
+}
 
-class XmlParser {
-
-};
-
-
-
-#endif //XMLPARSER_HPP
+#endif // XMLPARSER_HPP

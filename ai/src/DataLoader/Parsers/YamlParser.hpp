@@ -1,19 +1,13 @@
-/*
-** EPITECH PROJECT, 2025
-** rustiq_ai
-** File description:
-** 07
-*/
+#ifndef YMLPARSER_HPP
+#define YMLPARSER_HPP
 
-#ifndef YAMLPARSER_HPP
-#define YAMLPARSER_HPP
+#include "../Factory/ParserFactory.hpp"
 
+namespace rustiq {
+    class YmlParser : public IParser {
+    public:
+        std::vector<ChunkObject> parse(const std::string& filePath) override;
+    };
+}
 
-
-class YamlParser {
-
-};
-
-
-
-#endif //YAMLPARSER_HPP
+#endif // YMLPARSER_HPP

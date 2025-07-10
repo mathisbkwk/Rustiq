@@ -21,7 +21,6 @@ rustiq::FileExtension rustiq::ParserUtils::detectExtension(const std::string& pa
         {".xml",   XML},
         {".csv",   CSV},
         {".txt",   TXT},
-        {".xlsx",  XLSX},
     };
 
     std::string ext = std::filesystem::path(path).extension().string();
