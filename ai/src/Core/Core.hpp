@@ -1,7 +1,7 @@
 
 #include <exception>
+#include <iostream>
 #include <string>
-
 
 namespace rustiq {
     class Core {
@@ -20,9 +20,9 @@ namespace rustiq {
                 try {
                     functionToLookUp();
                 } catch (const std::exception& e) {
-                    throw rustiq::Core::CoreError(std::string("Error: ") + e.what());
+                    std::cerr << e.what() << std::endl;
                 } catch (...) {
-                    throw rustiq::Core::CoreError("Error: Unknown exception type caught");
+                    std::cerr << "Unexpected error caught." << std::endl;
                 }
             }
             bool isRunning = false;
