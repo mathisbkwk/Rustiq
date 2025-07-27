@@ -19,7 +19,7 @@ Tensor::Tensor(const std::vector<int>& shape, bool requires_grad)
     : requires_grad(requires_grad), _shape(shape) {
     size_t total_size = std::accumulate(shape.begin(), shape.end(), 1, std::multiplies<int>());
     _data.resize(total_size, 0.0f);
-    _compute_strides();
+    this->_compute_strides();
     if (requires_grad) {
         grad = std::make_shared<Tensor>(shape, false);
     }
@@ -31,7 +31,7 @@ Tensor::Tensor(const std::vector<float>& data, const std::vector<int>& shape, bo
     if (data.size() != expected_size) {
         throw std::invalid_argument("Data size doesn't match shape");
     }
-    _compute_strides();
+    this->_compute_strides();
     if (requires_grad) {
         grad = std::make_shared<Tensor>(shape, false);
     }
